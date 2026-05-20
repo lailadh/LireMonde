@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LireMonde</title>
+    <link rel="stylesheet" href="style.css" />
+    <base target="_blank" />
+  </head>
+  <body>
+    <!-- ===== NAVBAR ===== -->
+    <header class="navbar">
+      <div class="logo-section">
+        <div class="logo-img">
+          <img src="image/crlivre-removebg-preview.png" alt="logo" />
+        </div>
+        <span class="logo-titre">LireMonde</span>
+      </div>
+      <ul class="header-lien">
+        <li><a href="index.html" class="active">Accueil</a></li>
+        <li><a href="alire.html">À lire</a></li>
+        <li><a href="admin.html">Admin</a></li>
+      </ul>
+      <input
+        type="text"
+        class="search-bar"
+        id="search-bar"
+        placeholder="Rechercher un livre..."
+      />
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+      <div class="hero-left">
+        <h2>Découvrez votre prochaine lecture</h2>
+        <p>Explorez notre collection...</p>
+        <button class="btn-hero">Loud&amp;Discover</button>
+      </div>
+      <div class="hero-right">
+        <img src="image/téléchargement (10).jfif" alt="hero" />
+      </div>
+    </section>
+
+    <!-- ===== FILTRES ===== -->
+    <section class="filtres-section">
+      <button class="btn-filtrer" id="btn-filtrer">filtrer</button>
+      <div class="filtres-dropdown" id="filtres-dropdown">
+        <button class="filtre-option active" data-genre="Tous">Tous</button>
+        <button class="filtre-option" data-genre="Classique">Classique</button>
+        <button class="filtre-option" data-genre="Science-fiction">
+          Science-fiction
+        </button>
+        <button class="filtre-option" data-genre="Fantasy">Fantasy</button>
+        <button class="filtre-option" data-genre="Drame">Drame</button>
+      </div>
+    </section>
+
+    <!-- ===== GRILLE LIVRES ===== -->
+    <section class="livres-section">
+      <div class="livres-grid" id="livres-container">
+        <!-- Les livres seront injectés ici par JS -->
+      </div>
+    </section>
+
+    <!-- ===== SECTION À LIRE ===== -->
+    <section class="alire-section">
+      <div class="alire-titre">
+        <span class="coeur-deco">🤍</span>
+        <h2>ALire</h2>
+      </div>
+      <div class="livres-grid" id="alire-container">
+        <!-- Les livres "À lire" seront injectés ici par JS -->
+      </div>
+    </section>
+
+    <!-- ===== MODALE DÉTAILS ===== -->
+    <div class="modale-overlay" id="modale-overlay">
+      <div class="modale">
+        <button class="modale-close" id="modale-close">&times;</button>
+        <div class="modale-content">
+          <img id="modale-img" src="" alt="" />
+          <div class="modale-info">
+            <h3 id="modale-titre"></h3>
+            <p id="modale-auteur"></p>
+            <span id="modale-genre" class="genre-badge"></span>
+            <p id="modale-description"></p>
+            <button class="btn-modale-alire" id="btn-modale-alire">
+              ♡ Ajouter à ma liste
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+      <p>© 2026 LireMonde - ReadSphere Startup</p>
+    </footer>
+
+    <script src="api.js"></script>
+    <script src="accueil.js"></script>
+  </body>
+</html>

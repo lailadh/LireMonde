@@ -1,0 +1,76 @@
+{
+  "livres": [
+    {
+      "id": 1,
+      "titre": "Dune",
+      "auteur": "Frank Herbert",
+      "genre": "Science-fiction",
+      "description": "Sur la planète désertique d'Arrakis, Paul Atréides doit affronter les dangers du sable et des vers géants pour sauver sa famille et son peuple.",
+      "couverture": "image/dene/jpg",
+      "aLire": false
+    },
+    {
+      "id": 2,
+      "titre": "Le Petit Prince",
+      "auteur": "Antoine de Saint-Exupéry",
+      "genre": "Classique",
+      "description": "Un jeune prince voyage de planète en planète et découvre les mystères de l'amitié, de l'amour et de la vie.",
+      "couverture": "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=300&h=450&fit=crop",
+      "aLire": true
+    },
+    {
+      "id": 3,
+      "titre": "1984",
+      "auteur": "George Orwell",
+      "genre": "Science-fiction",
+      "description": "Dans un monde totalitaire où Big Brother surveille tout, Winston Smith tente de résister à l'oppression.",
+      "couverture": "https://images.unsplash.com/photo-1532012197267-da84d127e765?w=300&h=450&fit=crop",
+      "aLire": false
+    },
+    {
+      "id": 4,
+      "titre": "Hamlet",
+      "auteur": "William Shakespeare",
+      "genre": "Drame",
+      "description": "Le prince Hamlet cherche à venger la mort de son père, assassiné par son propre frère qui a usurpé le trône.",
+      "couverture": "https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=300&h=450&fit=crop",
+      "aLire": false
+    },
+    {
+      "id": 5,
+      "titre": "Harry Potter à l'école des sorciers",
+      "auteur": "J.K. Rowling",
+      "genre": "Fantasy",
+      "description": "Harry Potter découvre qu'il est un sorcier et entre à Poudlard, l'école de magie, où il commence une aventure extraordinaire.",
+      "couverture": "https://images.unsplash.com/photo-1618666012174-83b441c0bc76?w=300&h=450&fit=crop",
+      "aLire": true
+    },
+    {
+      "id": 6,
+      "titre": "Les Misérables",
+      "auteur": "Victor Hugo",
+      "genre": "Classique",
+      "description": "L'histoire de Jean Valjean, un ancien forçat qui cherche la rédemption dans la France du XIXe siècle.",
+      "couverture": "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=300&h=450&fit=crop",
+      "aLire": false
+    },
+    {
+      "id": 7,
+      "titre": "Fondation",
+      "auteur": "Isaac Asimov",
+      "genre": "Science-fiction",
+      "description": "Le mathématicien Hari Seldon prédit la chute de l'Empire Galactique et crée la Fondation pour préserver le savoir humain.",
+      "couverture": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=300&h=450&fit=crop",
+      "aLire": false
+    },
+    {
+      "id": 8,
+      "titre": "Le Seigneur des Anneaux",
+      "auteur": "J.R.R. Tolkien",
+      "genre": "Fantasy",
+      "description": "Frodon Sacquet doit détruire l'Anneau Unique dans les feux de la Montagne du Destin pour sauver la Terre du Milieu.",
+      "couverture": "https://images.unsplash.com/photo-1465101162946-4377e57745c3?w=300&h=450&fit=crop",
+      "aLire": false
+    }
+  ]
+}
