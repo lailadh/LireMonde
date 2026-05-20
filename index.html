@@ -1,20 +1,18 @@
-<!doctype html>
-<html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LireMonde</title>
-    <link rel="stylesheet" href="style.css" />
-    <base target="_blank" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LireMonde</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fontdiner+Swanky&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
   <body>
     <!-- ===== NAVBAR ===== -->
     <header class="navbar">
       <div class="logo-section">
         <div class="logo-img">
-          <img src="image/crlivre-removebg-preview.png" alt="logo" />
+          <img src="image/téléchargement__3_-removebg-preview.png" alt="logo" />
         </div>
-        <span class="logo-titre">LireMonde</span>
+        <span class="logo-titre">Lire Monde</span>
       </div>
       <ul class="header-lien">
         <li><a href="index.html" class="active">Accueil</a></li>
@@ -29,7 +27,6 @@
       />
     </header>
 
-    <!-- ===== HERO ===== -->
     <section class="hero">
       <div class="hero-left">
         <h2>Découvrez votre prochaine lecture</h2>
@@ -37,13 +34,12 @@
         <button class="btn-hero">Loud&amp;Discover</button>
       </div>
       <div class="hero-right">
-        <img src="image/téléchargement (10).jfif" alt="hero" />
+        <img src="image/brain (1).png" alt="hero" />
       </div>
     </section>
 
-    <!-- ===== FILTRES ===== -->
     <section class="filtres-section">
-      <button class="btn-filtrer" id="btn-filtrer">filtrer</button>
+      <button class="btn-filtrer" id="btn-filtrer">Tous Les livres </button>
       <div class="filtres-dropdown" id="filtres-dropdown">
         <button class="filtre-option active" data-genre="Tous">Tous</button>
         <button class="filtre-option" data-genre="Classique">Classique</button>
@@ -55,17 +51,21 @@
       </div>
     </section>
 
-    <!-- ===== GRILLE LIVRES ===== -->
+    <!--  GRILLE LIVRES -->
     <section class="livres-section">
       <div class="livres-grid" id="livres-container">
         <!-- Les livres seront injectés ici par JS -->
       </div>
     </section>
 
-    <!-- ===== SECTION À LIRE ===== -->
+    <!-- SECTION À LIRE  -->
     <section class="alire-section">
       <div class="alire-titre">
-        <span class="coeur-deco">🤍</span>
+        <img
+          src="image/crlivre-removebg-preview.png"
+          alt="coeur"
+          class="coeur-deco"
+        />
         <h2>ALire</h2>
       </div>
       <div class="livres-grid" id="alire-container">
@@ -73,7 +73,7 @@
       </div>
     </section>
 
-    <!-- ===== MODALE DÉTAILS ===== -->
+    <!--  MODALE DÉTAILS  -->
     <div class="modale-overlay" id="modale-overlay">
       <div class="modale">
         <button class="modale-close" id="modale-close">&times;</button>
