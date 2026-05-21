@@ -6,14 +6,15 @@
 }
 
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Alfa Slab One;
+
+  /* font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; */
   background-color: #3d0a30;
   color: white;
   min-height: 100vh;
 }
 
-/* ===== NAVBAR ===== */
-.navbar {
+header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -58,7 +59,7 @@ body {
   transition: all 0.2s;
   font-weight: bold;
   font-family: Abhaya Libre ExtraBold;
-  font-size: 16;
+  font-size: 16px;
 }
 
 .header-lien a:hover,
@@ -82,7 +83,7 @@ body {
   color: #88106c;
 }
 
-/* ===== HERO ===== */
+/*  HERO  */
 .hero {
   background: linear-gradient(135deg, #4d083b 0%, #86176a 50%, #b31591 100%);
   padding: 40px 50px;
@@ -535,4 +536,14 @@ body {
     width: 100%;
     height: 200px;
   }
+}
+
+.compteur-alire {
+  text-align: center;
+  padding: 20px 0 0;
+  background: #9333ea;
+  color: white;
+  padding: 6px 20px;
+  border-radius: 20px;
+  font-size: 14px;
 }

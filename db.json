@@ -1,13 +1,13 @@
 {
   "livres": [
     {
-      "id": "1",
       "titre": "Dune",
       "auteur": "Frank Herbert",
       "genre": "Science-fiction",
-      "description": "Sur la planète désertique d'Arrakis, Paul Atréides doit affronter les dangers du sable et des vers géants pour sauver sa famille et son peuple.",
       "couverture": "image/dene/jpg",
-      "aLire": false
+      "description": "Sur la planète désertique d'Arrakis, Paul Atréides doit affronter les dangers du sable et des vers géants pour sauver sa famille et son peuple.",
+      "aLire": false,
+      "id": "1"
     },
     {
       "id": "2",
@@ -16,7 +16,7 @@
       "genre": "Classique",
       "description": "Un jeune prince voyage de planète en planète et découvre les mystères de l'amitié, de l'amour et de la vie.",
       "couverture": "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=300&h=450&fit=crop",
-      "aLire": false
+      "aLire": true
     },
     {
       "id": "3",
@@ -61,7 +61,7 @@
       "genre": "Science-fiction",
       "description": "Le mathématicien Hari Seldon prédit la chute de l'Empire Galactique et crée la Fondation pour préserver le savoir humain.",
       "couverture": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=300&h=450&fit=crop",
-      "aLire": false
+      "aLire": true
     },
     {
       "id": "8",
@@ -70,7 +70,7 @@
       "genre": "Fantasy",
       "description": "Frodon Sacquet doit détruire l'Anneau Unique dans les feux de la Montagne du Destin pour sauver la Terre du Milieu.",
       "couverture": "https://images.unsplash.com/photo-1465101162946-4377e57745c3?w=300&h=450&fit=crop",
-      "aLire": false
+      "aLire": true
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
