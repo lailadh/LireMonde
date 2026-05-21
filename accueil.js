@@ -1,10 +1,10 @@
-//
+// ===== VARIABLES GLOBALES =====
 let tousLesLivres = [];
 let livresFiltres = [];
 let genreActif = "Tous";
 let rechercheTexte = "";
 
-//
+// ===== DOM ELEMENTS =====
 const livresContainer = document.getElementById("livres-container");
 const alireContainer = document.getElementById("alire-container");
 const searchBar = document.getElementById("search-bar");
@@ -24,13 +24,13 @@ const btnModaleAlire = document.getElementById("btn-modale-alire");
 
 let livreModaleActuel = null;
 
-// INITIALISATION
+// ===== INITIALISATION =====
 document.addEventListener("DOMContentLoaded", async () => {
   await chargerLivres();
   setupEventListeners();
 });
 
-// ===== CHARGER LES LIVRES
+// ===== CHARGER LES LIVRES =====
 async function chargerLivres() {
   tousLesLivres = await getAllLivres();
   livresFiltres = [...tousLesLivres];
@@ -189,7 +189,7 @@ function ouvrirModale(livre) {
   document.body.style.overflow = "hidden";
 }
 
-// METTRE À JOUR BOUTON MODALE
+// ===== METTRE À JOUR BOUTON MODALE =====
 function mettreAJourBoutonModale() {
   if (livreModaleActuel.aLire) {
     btnModaleAlire.innerHTML = "♥ Retirer de ma liste";
@@ -200,14 +200,14 @@ function mettreAJourBoutonModale() {
   }
 }
 
-// FERMER MODALE
+// ===== FERMER MODALE =====
 function fermerModale() {
   modaleOverlay.classList.remove("show");
   document.body.style.overflow = "";
   livreModaleActuel = null;
 }
 
-// FILTRER LES LIVRES
+// ===== FILTRER LES LIVRES =====
 function filtrerLivres() {
   livresFiltres = tousLesLivres.filter((livre) => {
     const matchGenre = genreActif === "Tous" || livre.genre === genreActif;
@@ -222,7 +222,7 @@ function filtrerLivres() {
   afficherLivres();
 }
 
-// SETUP EVENT LISTENERS
+// ===== SETUP EVENT LISTENERS =====
 function setupEventListeners() {
   // Toggle dropdown filtres
   btnFiltrer.addEventListener("click", (e) => {

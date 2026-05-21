@@ -20,13 +20,13 @@ document.addEventListener("DOMContentLoaded", async () => {
   setupEventListeners();
 });
 
-// CHARGER
+// ===== CHARGER =====
 async function chargerLivres() {
   tousLesLivres = await getAllLivres();
   afficherLivresALire(tousLesLivres);
 }
 
-// AFFICHER
+// ===== AFFICHER =====
 function afficherLivresALire(livres) {
   const livresALire = livres.filter((l) => l.aLire);
   alireContainer.innerHTML = "";
@@ -81,7 +81,7 @@ function afficherLivresALire(livres) {
   });
 }
 
-//  MODALE
+// ===== MODALE =====
 function ouvrirModale(livre) {
   livreModaleActuel = livre;
   const imageSrc =
@@ -108,7 +108,7 @@ function fermerModale() {
   livreModaleActuel = null;
 }
 
-// EVENT LISTENERS
+// ===== EVENT LISTENERS =====
 function setupEventListeners() {
   modaleClose.addEventListener("click", fermerModale);
   modaleOverlay.addEventListener("click", (e) => {

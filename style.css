@@ -59,7 +59,7 @@ header {
   transition: all 0.2s;
   font-weight: bold;
   font-family: Abhaya Libre ExtraBold;
-  font-size: 16px;
+  font-size: 16;
 }
 
 .header-lien a:hover,
@@ -536,14 +536,4 @@ header {
     width: 100%;
     height: 200px;
   }
-}
-
-.compteur-alire {
-  text-align: center;
-  padding: 20px 0 0;
-  background: #9333ea;
-  color: white;
-  padding: 6px 20px;
-  border-radius: 20px;
-  font-size: 14px;
 }
