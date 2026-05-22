@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Monde - Admin</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fontdiner+Swanky&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <base target="_blank" />
+  </head>
+  <body id="admin">
+    <header class="header">
+      <div class="logo-section">
+        <div class="logo-img">
+          <img src="image/téléchargement__3_-removebg-preview.png" alt="logo" />
+        </div>
+        <span class="logo-titre">Lire Monde</span>
+      </div>
+      <ul class="header-lien">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="alire.html">À lire</a></li>
+        <li><a href="admin.html" class="active">Admin</a></li>
+      </ul>
+    </header>
+
+    <section class="admin-section">
+      <div class="admin-header-bar">
+        <h2 class="section-titre">Tableau de bord</h2>
+        <button class="btn-ajouter" id="btn-ajouter">+ Ajouter un livre</button>
+      </div>
+
+      <!-- FORMULAIRE (caché par défaut) -->
+      <div class="form-overlay hidden" id="form-overlay">
+        <div class="form-modal">
+          <button class="form-close" id="btn-form-close">&times;</button>
+          <h3 id="form-titre-modal">Ajouter un livre</h3>
+          <form id="admin-form" class="admin-form">
+            <input type="hidden" id="form-id" />
+            <div class="form-group">
+              <label for="form-titre">Titre</label>
+              <input
+                type="text"
+                id="form-titre"
+                placeholder="Titre du livre"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="form-auteur">Auteur</label>
+              <input
+                type="text"
+                id="form-auteur"
+                placeholder="Nom de l'auteur"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="form-genre">Genre</label>
+              <input
+                type="text"
+                id="form-genre"
+                placeholder="Ex: Science-fiction"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="form-description">Description</label>
+              <textarea
+                id="form-description"
+                placeholder="Résumé du livre..."
+                required
+              ></textarea>
+            </div>
+            <div class="form-group">
+              <label for="form-couverture">URL Couverture</label>
+              <input
+                type="text"
+                id="form-couverture"
+                placeholder="https://..."
+                required
+              />
+            </div>
+            <div class="form-actions">
+              <button type="button" class="btn-annuler" id="btn-annuler">
+                Annuler
+              </button>
+              <button type="submit" class="btn-sauvegarder">Enregistrer</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- TABLEAU -->
+      <div class="admin-table-wrapper">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Couverture</th>
+              <th>Titre</th>
+              <th>Auteur</th>
+              <th>Genre</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="admin-tbody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>© 2026 LireMonde - ReadSphere Startup</p>
+    </footer>
+
+    <script src="api.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

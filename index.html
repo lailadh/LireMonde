@@ -1,15 +1,21 @@
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LireMonde</title>
-  <link href="https://fonts.googleapis.com/css2?family=Fontdiner+Swanky&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="../css/style.css"></head>
-  <body>
-  
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Monde-index</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fontdiner+Swanky&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <base target="_blank" />
+  </head>
+  <body id="accueil">
     <header class="header">
       <div class="logo-section">
         <div class="logo-img">
-          <img src="../image/téléchargement__3_-removebg-preview.png" alt="logo" />
+          <img src="image/téléchargement__3_-removebg-preview.png" alt="logo" />
         </div>
         <span class="logo-titre">Lire Monde</span>
       </div>
@@ -30,48 +36,38 @@
       <div class="hero-left">
         <h2>Découvrez votre prochaine lecture</h2>
         <p>Explorez notre collection...</p>
-        <button class="btn-hero">Loud&amp;Discover</button>
+        <button class="btn-hero">Loud&Discover</button>
       </div>
       <div class="hero-right">
-        <img src="../image/brain (1).png" alt="hero" />
+        <img src="image/brain (1).png" alt="hero" />
       </div>
     </section>
 
     <section class="filtres-section">
-      <button class="btn-filtrer" id="btn-filtrer"> Tous Les Genre </button>
-      <div class="filtres-dropdown" id="filtres-dropdown">
-        <button class="filtre-option active" data-genre="Tous">Tous</button>
-        <button class="filtre-option" data-genre="Classique">Classique</button>
-        <button class="filtre-option" data-genre="Science-fiction">
-          Science-fiction
-        </button>
-        <button class="filtre-option" data-genre="Fantasy">Fantasy</button>
-        <button class="filtre-option" data-genre="Drame">Drame</button>
+      <div class="filtres" id="filtres-container">
+        <!-- Les filtres seront générés dynamiquement par JS -->
       </div>
     </section>
 
     <section class="livres-section">
-      <div class="livres-grid" id="livres-container">
-      </div>
+      <div class="livres-grid" id="livres-container"></div>
     </section>
 
     <section class="alire-section">
       <div class="alire-titre">
         <img
-          src="../image/crlivre-removebg-preview.png"
+          src="image/crlivre-removebg-preview.png"
           alt="coeur"
           class="coeur-deco"
         />
-        <h2>ALire</h2>
+        <h2>Ma Liste À Lire</h2>
       </div>
-
-      <div class="livres-grid" id="alire-container">
-      </div>
+      <div class="livres-grid" id="alire-container"></div>
     </section>
 
-    <div class="modale-overlay" id="modale-overlay">
+    <div class="modale-overlay hidden" id="modale">
       <div class="modale">
-        <button class="modale-close" id="modale-close">&times;</button>
+        <button class="modale-close" id="btn-fermer-modale">&times;</button>
         <div class="modale-content">
           <img id="modale-img" src="" alt="" />
           <div class="modale-info">
@@ -91,7 +87,7 @@
       <p>© 2026 LireMonde - ReadSphere Startup</p>
     </footer>
 
-    <script src="../js/api.js"></script>
-    <script src="../js/accueil.js"></script>
+    <script src="api.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>

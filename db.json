@@ -1,22 +1,13 @@
 {
   "livres": [
     {
-      "titre": "Dune",
-      "auteur": "Frank Herbert",
-      "genre": "Science-fiction",
-      "couverture": "https://images.unsplash.com/photo-1541963463532-d68292c34b19?w=300&h=450&fit=crop",
-      "description": "Sur la planète désertique d'Arrakis, Paul Atréides doit affronter les dangers du sable et des vers géants pour sauver sa famille et son peuple.",
-      "aLire": false,
-      "id": "1"
-    },
-    {
-      "id": "2",
       "titre": "Le Petit Prince",
       "auteur": "Antoine de Saint-Exupéry",
       "genre": "Classique",
-      "description": "Un jeune prince voyage de planète en planète et découvre les mystères de l'amitié, de l'amour et de la vie.",
       "couverture": "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=300&h=450&fit=crop",
-      "aLire": true
+      "description": "Un jeune prince voyage de planète en planète et découvre les mystères de l'amitié, de l'amour et de la vie.",
+      "aLire": true,
+      "id": "2"
     },
     {
       "id": "3",
@@ -61,7 +52,7 @@
       "genre": "Science-fiction",
       "description": "Le mathématicien Hari Seldon prédit la chute de l'Empire Galactique et crée la Fondation pour préserver le savoir humain.",
       "couverture": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=300&h=450&fit=crop",
-      "aLire": true
+      "aLire": false
     },
     {
       "id": "8",
