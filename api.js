@@ -1,13 +1,5 @@
 const BASE_URL = "http://localhost:3001";
 
-// ============================================
-// API - Fonctions de communication avec JSON Server
-// ============================================
-
-/**
- * Récupère tous les livres depuis l'API
- * @returns {Promise<Array>} Liste des livres
- */
 async function getAllLivres() {
   try {
     const res = await fetch(`${BASE_URL}/livres`);
@@ -19,11 +11,6 @@ async function getAllLivres() {
   }
 }
 
-/**
- * Récupère un livre par son ID
- * @param {string|number} id - ID du livre
- * @returns {Promise<Object|null>} Le livre ou null
- */
 async function getLivreById(id) {
   try {
     const res = await fetch(`${BASE_URL}/livres/${id}`);
@@ -35,11 +22,6 @@ async function getLivreById(id) {
   }
 }
 
-/**
- * Ajoute un nouveau livre
- * @param {Object} livre - Objet livre à ajouter
- * @returns {Promise<Object|null>} Le livre ajouté ou null
- */
 async function addLivre(livre) {
   try {
     const res = await fetch(`${BASE_URL}/livres`, {
@@ -55,12 +37,6 @@ async function addLivre(livre) {
   }
 }
 
-/**
- * Met à jour un livre existant (PUT - remplacement complet)
- * @param {string|number} id - ID du livre
- * @param {Object} data - Nouvelles données du livre
- * @returns {Promise<Object|null>} Le livre mis à jour ou null
- */
 async function updateLivre(id, data) {
   try {
     const res = await fetch(`${BASE_URL}/livres/${id}`, {
@@ -76,12 +52,6 @@ async function updateLivre(id, data) {
   }
 }
 
-/**
- * Modifie partiellement un livre (PATCH)
- * @param {string|number} id - ID du livre
- * @param {Object} data - Données partielles à modifier
- * @returns {Promise<Object|null>} Le livre modifié ou null
- */
 async function patchLivre(id, data) {
   try {
     const res = await fetch(`${BASE_URL}/livres/${id}`, {
@@ -97,21 +67,10 @@ async function patchLivre(id, data) {
   }
 }
 
-/**
- * Ajoute ou retire un livre de la liste "À lire"
- * @param {string|number} id - ID du livre
- * @param {boolean} valeur - true pour ajouter, false pour retirer
- * @returns {Promise<Object|null>} Le livre mis à jour ou null
- */
 async function toggleALire(id, valeur) {
   return await patchLivre(id, { aLire: valeur });
 }
 
-/**
- * Supprime un livre
- * @param {string|number} id - ID du livre
- * @returns {Promise<boolean>} true si supprimé, false sinon
- */
 async function deleteLivre(id) {
   try {
     const res = await fetch(`${BASE_URL}/livres/${id}`, {

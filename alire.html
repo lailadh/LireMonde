@@ -9,7 +9,6 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
-    <base target="_blank" />
   </head>
   <body id="alire">
     <header class="header">
@@ -43,6 +42,24 @@
       </div>
       <div class="livres-grid" id="alire-container"></div>
     </section>
+
+    <div class="modale-overlay hidden" id="modale">
+      <div class="modale">
+        <button class="modale-close" id="btn-fermer-modale">&times;</button>
+        <div class="modale-content">
+          <img id="modale-img" src="" alt="" />
+          <div class="modale-info">
+            <h3 id="modale-titre"></h3>
+            <p id="modale-auteur"></p>
+            <span id="modale-genre" class="genre-badge"></span>
+            <p id="modale-description"></p>
+            <button class="btn-modale-alire" id="btn-modale-alire">
+              ♡ Ajouter à ma liste
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <footer class="footer">
       <p>© 2026 LireMonde - ReadSphere Startup</p>

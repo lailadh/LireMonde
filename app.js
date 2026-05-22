@@ -1,6 +1,3 @@
-// ============================================
-// UI - Logique d'interface utilisateur
-// ============================================
 
 function creerCarteLivre(livre) {
   const carte = document.createElement("div");
@@ -19,12 +16,10 @@ function creerCarteLivre(livre) {
     </button>
   `;
 
-  // Click sur carte = modale
   carte.querySelector(".carte-info").addEventListener("click", () => {
     ouvrirModale(livre);
   });
 
-  // Click sur btn alire
   carte.querySelector(".btn-alire").addEventListener("click", async (e) => {
     e.stopPropagation();
     const nouvelleValeur = !livre.aLire;
@@ -35,13 +30,14 @@ function creerCarteLivre(livre) {
       e.target.classList.toggle("active", nouvelleValeur);
       e.target.dataset.alire = nouvelleValeur;
 
-      // Rafraîchir la section À Lire si on est sur l'accueil
       if (document.body.id === "accueil") {
         const alireContainer = document.getElementById("alire-container");
         if (alireContainer) {
           const livres = await getAllLivres();
           afficherSectionAlire(livres, alireContainer);
         }
+      } else if (document.body.id === "alire") {
+        initAlire();
       }
     }
   });
@@ -62,9 +58,7 @@ function afficherSectionAlire(livres, container) {
   });
 }
 
-// ============================================
-// MODALE - Détails du livre
-// ============================================
+
 
 function ouvrirModale(livre) {
   const modale = document.getElementById("modale");
@@ -76,7 +70,6 @@ function ouvrirModale(livre) {
   document.getElementById("modale-genre").textContent = livre.genre;
   document.getElementById("modale-description").textContent = livre.description;
 
-  // Mise à jour du bouton À Lire dans la modale
   const btnModale = document.getElementById("btn-modale-alire");
   if (btnModale) {
     mettreAJourBoutonModale(btnModale, livre);
@@ -91,7 +84,6 @@ function mettreAJourBoutonModale(btnModale, livre) {
     : "♡ Ajouter à ma liste";
   btnModale.className = "btn-modale-alire" + (livre.aLire ? " active" : "");
 
-  // Supprimer l'ancien event listener et en ajouter un nouveau
   const newBtn = btnModale.cloneNode(true);
   btnModale.parentNode.replaceChild(newBtn, btnModale);
 
@@ -102,7 +94,6 @@ function mettreAJourBoutonModale(btnModale, livre) {
       livre.aLire = nouvelleValeur;
       mettreAJourBoutonModale(newBtn, livre);
 
-      // Rafraîchir l'affichage des livres
       if (document.body.id === "accueil") {
         initAccueil();
       }
@@ -114,9 +105,7 @@ function fermerModale() {
   document.getElementById("modale")?.classList.add("hidden");
 }
 
-// ============================================
-// PAGE ACCUEIL - index.html
-// ============================================
+
 
 async function initAccueil() {
   const container = document.getElementById("livres-container");
@@ -125,7 +114,6 @@ async function initAccueil() {
   let livres = await getAllLivres();
   let filtreActif = "Tous";
 
-  // Génération des filtres dynamiques par genre
   const genres = ["Tous", ...new Set(livres.map((l) => l.genre))];
   const filtresSection = document.getElementById("filtres-container");
   if (filtresSection) {
@@ -146,21 +134,17 @@ async function initAccueil() {
     });
   }
 
-  // Barre de recherche en temps réel
   const searchBar = document.querySelector(".search-bar");
   searchBar?.addEventListener("input", afficherLivres);
 
-  // Fermer modale
   document
     .getElementById("btn-fermer-modale")
     ?.addEventListener("click", fermerModale);
 
-  // Fermer modale en cliquant à l'extérieur
   document.getElementById("modale")?.addEventListener("click", (e) => {
     if (e.target.id === "modale") fermerModale();
   });
 
-  
   function afficherLivres() {
     const recherche = searchBar?.value.toLowerCase() || "";
     const filtered = livres.filter((l) => {
@@ -181,24 +165,42 @@ async function initAccueil() {
 
   afficherLivres();
 
-  // Afficher les livres À Lire dans la section dédiée
   const alireContainer = document.getElementById("alire-container");
   if (alireContainer) {
     afficherSectionAlire(livres, alireContainer);
   }
 }
 
-// ============================================
-// PAGE À LIRE - alire.html
-// ============================================
+
 
 async function initAlire() {
   const container = document.getElementById("alire-container");
   if (!container) return;
 
+  document
+    .getElementById("btn-fermer-modale")
+    ?.addEventListener("click", fermerModale);
+
+  document.getElementById("modale")?.addEventListener("click", (e) => {
+    if (e.target.id === "modale") fermerModale();
+  });
+
+  const searchBar = document.querySelector(".search-bar");
+  searchBar?.addEventListener("input", () => afficherAlire());
+
   async function afficherAlire() {
     const livres = await getAllLivres();
-    const aLire = livres.filter((l) => l.aLire);
+    const recherche = searchBar?.value.toLowerCase() || "";
+
+    const aLire = livres.filter((l) => {
+      if (!l.aLire) return false;
+      if (!recherche) return true;
+      return (
+        l.titre.toLowerCase().includes(recherche) ||
+        l.auteur.toLowerCase().includes(recherche)
+      );
+    });
+
     container.innerHTML = "";
 
     if (aLire.length === 0) {
@@ -209,7 +211,6 @@ async function initAlire() {
     aLire.forEach((l) => {
       const carte = creerCarteLivre(l);
 
-      // Bouton supprimer spécifique à la page À Lire
       const btnSupp = document.createElement("button");
       btnSupp.className = "btn-supprimer";
       btnSupp.textContent = "✕";
@@ -217,7 +218,7 @@ async function initAlire() {
       btnSupp.addEventListener("click", async (e) => {
         e.stopPropagation();
         await toggleALire(l.id, false);
-        afficherAlire();
+        afficherAlire(); 
       });
 
       carte.appendChild(btnSupp);
@@ -228,9 +229,7 @@ async function initAlire() {
   afficherAlire();
 }
 
-// ============================================
-// PAGE ADMIN - admin.html
-// ============================================
+
 
 async function initAdmin() {
   const tbody = document.getElementById("admin-tbody");
@@ -240,7 +239,6 @@ async function initAdmin() {
 
   if (!tbody) return;
 
-  // Ouvrir le formulaire (Ajout)
   document.getElementById("btn-ajouter")?.addEventListener("click", () => {
     adminForm.reset();
     document.getElementById("form-id").value = "";
@@ -248,15 +246,17 @@ async function initAdmin() {
     formOverlay.classList.remove("hidden");
   });
 
-  // Fermer le formulaire
   function fermerFormulaire() {
     formOverlay?.classList.add("hidden");
   }
 
-  document.getElementById("btn-form-close")?.addEventListener("click", fermerFormulaire);
-  document.getElementById("btn-annuler")?.addEventListener("click", fermerFormulaire);
+  document
+    .getElementById("btn-form-close")
+    ?.addEventListener("click", fermerFormulaire);
+  document
+    .getElementById("btn-annuler")
+    ?.addEventListener("click", fermerFormulaire);
 
-  // Fermer en cliquant à l'extérieur
   formOverlay?.addEventListener("click", (e) => {
     if (e.target === formOverlay) fermerFormulaire();
   });
@@ -279,7 +279,6 @@ async function initAdmin() {
         </td>
       `;
 
-      // Suppression
       tr.querySelector(".btn-delete").addEventListener("click", async () => {
         if (confirm(`Supprimer "${l.titre}" ?`)) {
           const success = await deleteLivre(l.id);
@@ -287,7 +286,6 @@ async function initAdmin() {
         }
       });
 
-      // Édition - Ouvre le formulaire pré-rempli
       tr.querySelector(".btn-edit").addEventListener("click", () => {
         remplirFormulaire(l);
         formTitreModal.textContent = "Modifier le livre";
@@ -298,7 +296,6 @@ async function initAdmin() {
     });
   }
 
-  
   function remplirFormulaire(l) {
     document.getElementById("form-id").value = l.id;
     document.getElementById("form-titre").value = l.titre;
@@ -308,7 +305,6 @@ async function initAdmin() {
     document.getElementById("form-couverture").value = l.couverture;
   }
 
-  // Soumission du formulaire (Ajout ou Modification)
   adminForm?.addEventListener("submit", async (e) => {
     e.preventDefault();
 
@@ -324,10 +320,9 @@ async function initAdmin() {
 
     let success;
     if (id) {
-      // Modification
       success = await updateLivre(id, { ...data, id: id });
     } else {
-      // Ajout
+
       success = await addLivre(data);
     }
 
@@ -342,9 +337,7 @@ async function initAdmin() {
   afficherAdmin();
 }
 
-// ============================================
-// INITIALISATION - Détection de la page active
-// ============================================
+
 document.addEventListener("DOMContentLoaded", () => {
   const page = document.body.id;
 

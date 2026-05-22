@@ -10,6 +10,9 @@ body {
   background-color: #3d0a30;
   color: white;
   min-height: 100vh;
+  /* === جديد: Flexbox باش الفوتر يهبط === */
+  display: flex;
+  flex-direction: column;
 }
 
 header {
@@ -81,6 +84,12 @@ header {
 
 .search-bar::placeholder {
   color: #88106c;
+}
+
+/* ===== CONTENU PRINCIPAL (جديد) ===== */
+/* كل العناصر المباشرة فـ body ما عدا header و footer */
+body > *:not(header):not(.footer) {
+  flex: 1;
 }
 
 /* ===== HERO ===== */
@@ -447,6 +456,7 @@ header {
   background: black;
   color: #d8a8e8;
   font-size: 12px;
+  /* ما تحتاج تبدل والو هنا */
 }
 
 /* ===== ADMIN ===== */

@@ -4,13 +4,13 @@
       "titre": "Le Petit Prince",
       "auteur": "Antoine de Saint-Exupéry",
       "genre": "Classique",
-      "couverture": "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=300&h=450&fit=crop",
       "description": "Un jeune prince voyage de planète en planète et découvre les mystères de l'amitié, de l'amour et de la vie.",
-      "aLire": true,
-      "id": "2"
+      "couverture": "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=300&h=450&fit=crop",
+      "aLire": false,
+      "id": "1"
     },
     {
-      "id": "3",
+      "id": "2",
       "titre": "1984",
       "auteur": "George Orwell",
       "genre": "Science-fiction",
@@ -19,7 +19,7 @@
       "aLire": false
     },
     {
-      "id": "4",
+      "id": "3",
       "titre": "Hamlet",
       "auteur": "William Shakespeare",
       "genre": "Drame",
@@ -28,7 +28,7 @@
       "aLire": false
     },
     {
-      "id": "5",
+      "id": "4",
       "titre": "Harry Potter à l'école des sorciers",
       "auteur": "J.K. Rowling",
       "genre": "Fantasy",
@@ -37,7 +37,7 @@
       "aLire": true
     },
     {
-      "id": "6",
+      "id": "5",
       "titre": "Les Misérables",
       "auteur": "Victor Hugo",
       "genre": "Classique",
@@ -46,7 +46,7 @@
       "aLire": false
     },
     {
-      "id": "7",
+      "id": "6",
       "titre": "Fondation",
       "auteur": "Isaac Asimov",
       "genre": "Science-fiction",
@@ -55,13 +55,13 @@
       "aLire": false
     },
     {
-      "id": "8",
+      "id": "7",
       "titre": "Le Seigneur des Anneaux",
       "auteur": "J.R.R. Tolkien",
       "genre": "Fantasy",
       "description": "Frodon Sacquet doit détruire l'Anneau Unique dans les feux de la Montagne du Destin pour sauver la Terre du Milieu.",
       "couverture": "https://images.unsplash.com/photo-1465101162946-4377e57745c3?w=300&h=450&fit=crop",
-      "aLire": false
+      "aLire": true
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
