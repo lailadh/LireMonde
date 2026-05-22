@@ -1,6 +1,5 @@
 const BASE_URL = "http://localhost:3000";
 
-// ===== GET ALL LIVRES =====
 async function getAllLivres() {
   try {
     const response = await fetch(`${BASE_URL}/livres`);
@@ -14,7 +13,6 @@ async function getAllLivres() {
   }
 }
 
-// ===== GET LIVRE BY ID =====
 async function getLivreById(id) {
   try {
     const response = await fetch(`${BASE_URL}/livres/${id}`);
@@ -28,7 +26,6 @@ async function getLivreById(id) {
   }
 }
 
-// ===== ADD LIVRE =====
 async function addLivre(livre) {
   try {
     const response = await fetch(`${BASE_URL}/livres`, {
@@ -48,7 +45,6 @@ async function addLivre(livre) {
   }
 }
 
-// ===== UPDATE LIVRE =====
 async function updateLivre(id, livre) {
   try {
     const response = await fetch(`${BASE_URL}/livres/${id}`, {
@@ -68,7 +64,6 @@ async function updateLivre(id, livre) {
   }
 }
 
-// ===== DELETE LIVRE =====
 async function deleteLivre(id) {
   try {
     const response = await fetch(`${BASE_URL}/livres/${id}`, {
@@ -84,7 +79,6 @@ async function deleteLivre(id) {
   }
 }
 
-// ===== TOGGLE À LIRE =====
 async function toggleALire(id, aLire) {
   try {
     const response = await fetch(`${BASE_URL}/livres/${id}`, {

@@ -4,7 +4,7 @@
       "titre": "Dune",
       "auteur": "Frank Herbert",
       "genre": "Science-fiction",
-      "couverture": "image/dene/jpg",
+      "couverture": "https://images.unsplash.com/photo-1541963463532-d68292c34b19?w=300&h=450&fit=crop",
       "description": "Sur la planète désertique d'Arrakis, Paul Atréides doit affronter les dangers du sable et des vers géants pour sauver sa famille et son peuple.",
       "aLire": false,
       "id": "1"
@@ -70,7 +70,7 @@
       "genre": "Fantasy",
       "description": "Frodon Sacquet doit détruire l'Anneau Unique dans les feux de la Montagne du Destin pour sauver la Terre du Milieu.",
       "couverture": "https://images.unsplash.com/photo-1465101162946-4377e57745c3?w=300&h=450&fit=crop",
-      "aLire": true
+      "aLire": false
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin — LireMonde</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fontdiner+Swanky&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo-section">
+        <div class="logo-img">
+          <img
+            src="../image/téléchargement__3_-removebg-preview.png"
+            alt="logo"
+          />
+        </div>
+        <span class="logo-titre">Lire Monde</span>
+      </div>
+      <ul class="header-lien">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="alire.html">À lire</a></li>
+        <li><a href="admin.html" class="active">Admin</a></li>
+      </ul>
+      <input
+        type="text"
+        class="search-bar"
+        id="search-bar"
+        placeholder="Rechercher..."
+      />
+    </header>
+
+    <section class="hero" style="min-height: 100px; padding: 20px 50px">
+      <div class="hero-left">
+        <h2>Tableau de bord Admin</h2>
+        <p>Gérez votre bibliothèque LireMonde</p>
+      </div>
+      <div class="hero-right">
+        <img src="../image/brain (1).png" alt="hero" />
+      </div>
+    </section>
+
+    <section class="admin-section">
+      <div class="stats-bar">
+        <div class="stat-card">
+          <div class="stat-num" id="stat-total">0</div>
+          <div class="stat-label">Total livres</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num" id="stat-alire">0</div>
+          <div class="stat-label">À lire</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num" id="stat-genres">0</div>
+          <div class="stat-label">Genres</div>
+        </div>
+      </div>
+
+      <div class="admin-header-bar">
+        <h2>📚 Gestion des livres</h2>
+        <button class="btn-ajouter" id="btn-ouvrir-form">
+          + Ajouter un livre
+        </button>
+      </div>
+
+      <div class="admin-table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Couverture</th>
+              <th>Titre</th>
+              <th>Auteur</th>
+              <th>Genre</th>
+              <th>À Lire</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="tableau-body">
+            <tr>
+              <td
+                colspan="6"
+                style="text-align: center; color: #d8a8e8; padding: 30px"
+              >
+                Chargement...
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <div class="form-overlay" id="form-overlay">
+      <div class="form-modal">
+        <button class="form-close" id="form-close">&times;</button>
+        <h3 id="form-titre-modal">Ajouter un livre</h3>
+
+        <input type="hidden" id="form-id" />
+
+        <div class="form-group">
+          <label>Titre *</label>
+          <input type="text" id="form-titre" placeholder="Titre du livre" />
+        </div>
+        <div class="form-group">
+          <label>Auteur *</label>
+          <input type="text" id="form-auteur" placeholder="Nom de l'auteur" />
+        </div>
+        <div class="form-group">
+          <label>Genre *</label>
+          <select id="form-genre">
+            <option value="Classique">Classique</option>
+            <option value="Science-fiction">Science-fiction</option>
+            <option value="Fantasy">Fantasy</option>
+            <option value="Drame">Drame</option>
+            <option value="Roman">Roman</option>
+            <option value="Autre">Autre</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Couverture (URL)</label>
+          <input type="text" id="form-couverture" placeholder="https://..." />
+        </div>
+        <div class="form-group">
+          <label>Description</label>
+          <textarea
+            id="form-description"
+            placeholder="Description du livre..."
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <label>
+            <input
+              type="checkbox"
+              id="form-alire"
+              style="width: auto; margin-right: 6px"
+            />
+            Ajouter à "À lire"
+          </label>
+        </div>
+
+        <div class="form-actions">
+          <button class="btn-annuler" id="btn-annuler">Annuler</button>
+          <button class="btn-sauvegarder" id="btn-sauvegarder">
+            💾 Sauvegarder
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="notif" id="notif"></div>
+
+    <footer class="footer">
+      <p>© 2026 LireMonde - ReadSphere Startup</p>
+    </footer>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/admin.js"></script>
+  </body>
+</html>

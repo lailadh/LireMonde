@@ -1,4 +1,4 @@
-// ===== PAGE À LIRE =====
+
 let tousLesLivres = [];
 let livreModaleActuel = null;
 
@@ -14,19 +14,19 @@ const modaleGenre = document.getElementById("modale-genre");
 const modaleDescription = document.getElementById("modale-description");
 const btnModaleAlire = document.getElementById("btn-modale-alire");
 
-// ===== INITIALISATION =====
+
 document.addEventListener("DOMContentLoaded", async () => {
   await chargerLivres();
   setupEventListeners();
 });
 
-// ===== CHARGER =====
+
 async function chargerLivres() {
   tousLesLivres = await getAllLivres();
   afficherLivresALire(tousLesLivres);
 }
 
-// ===== AFFICHER =====
+
 function afficherLivresALire(livres) {
   const livresALire = livres.filter((l) => l.aLire);
   alireContainer.innerHTML = "";
@@ -81,7 +81,7 @@ function afficherLivresALire(livres) {
   });
 }
 
-// ===== MODALE =====
+
 function ouvrirModale(livre) {
   livreModaleActuel = livre;
   const imageSrc =
@@ -108,7 +108,6 @@ function fermerModale() {
   livreModaleActuel = null;
 }
 
-// ===== EVENT LISTENERS =====
 function setupEventListeners() {
   modaleClose.addEventListener("click", fermerModale);
   modaleOverlay.addEventListener("click", (e) => {
@@ -132,7 +131,6 @@ function setupEventListeners() {
     }
   });
 
-  // Recherche en temps réel
   searchBar.addEventListener("input", (e) => {
     const texte = e.target.value.toLowerCase();
     const filtrés = tousLesLivres.filter(

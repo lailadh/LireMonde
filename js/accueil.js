@@ -1,10 +1,8 @@
-// ===== VARIABLES GLOBALES =====
 let tousLesLivres = [];
 let livresFiltres = [];
 let genreActif = "Tous";
 let rechercheTexte = "";
 
-// ===== DOM ELEMENTS =====
 const livresContainer = document.getElementById("livres-container");
 const alireContainer = document.getElementById("alire-container");
 const searchBar = document.getElementById("search-bar");
@@ -12,7 +10,8 @@ const btnFiltrer = document.getElementById("btn-filtrer");
 const filtresDropdown = document.getElementById("filtres-dropdown");
 const filtreOptions = document.querySelectorAll(".filtre-option");
 
-// Modale elements
+
+
 const modaleOverlay = document.getElementById("modale-overlay");
 const modaleClose = document.getElementById("modale-close");
 const modaleImg = document.getElementById("modale-img");
@@ -24,13 +23,11 @@ const btnModaleAlire = document.getElementById("btn-modale-alire");
 
 let livreModaleActuel = null;
 
-// ===== INITIALISATION =====
 document.addEventListener("DOMContentLoaded", async () => {
   await chargerLivres();
   setupEventListeners();
 });
 
-// ===== CHARGER LES LIVRES =====
 async function chargerLivres() {
   tousLesLivres = await getAllLivres();
   livresFiltres = [...tousLesLivres];
@@ -38,7 +35,6 @@ async function chargerLivres() {
   afficherLivresALire();
 }
 
-// ===== AFFICHER LES LIVRES (GRILLE PRINCIPALE) =====
 function afficherLivres() {
   livresContainer.innerHTML = "";
 
@@ -53,7 +49,6 @@ function afficherLivres() {
   });
 }
 
-// ===== CRÉER UNE CARTE LIVRE =====
 function creerCarteLivre(livre) {
   const carte = document.createElement("div");
   carte.className = "carte-livre";
@@ -76,14 +71,12 @@ function creerCarteLivre(livre) {
     </div>
   `;
 
-  // Click sur la carte = ouvrir modale
   carte.addEventListener("click", (e) => {
     if (!e.target.classList.contains("btn-alire")) {
       ouvrirModale(livre);
     }
   });
 
-  // Click sur le bouton cœur
   const btnCoeur = carte.querySelector(".btn-alire");
   btnCoeur.addEventListener("click", async (e) => {
     e.stopPropagation();
@@ -93,7 +86,6 @@ function creerCarteLivre(livre) {
   return carte;
 }
 
-// ===== AFFICHER LES LIVRES "À LIRE" =====
 function afficherLivresALire() {
   if (!alireContainer) return;
   alireContainer.innerHTML = "";
@@ -111,7 +103,6 @@ function afficherLivresALire() {
   });
 }
 
-// ===== CRÉER CARTE "À LIRE" =====
 function creerCarteAlire(livre) {
   const carte = document.createElement("div");
   carte.className = "carte-alire";
@@ -132,14 +123,12 @@ function creerCarteAlire(livre) {
     </div>
   `;
 
-  // Click sur la carte = ouvrir modale
   carte.addEventListener("click", (e) => {
     if (!e.target.classList.contains("btn-supprimer")) {
       ouvrirModale(livre);
     }
   });
 
-  // Click sur le bouton supprimer
   const btnSuppr = carte.querySelector(".btn-supprimer");
   btnSuppr.addEventListener("click", async (e) => {
     e.stopPropagation();
@@ -149,7 +138,6 @@ function creerCarteAlire(livre) {
   return carte;
 }
 
-// ===== TOGGLE LIVRE À LIRE =====
 async function toggleLivreALire(id, aLire) {
   const resultat = await toggleALire(id, aLire);
   if (resultat) {
@@ -166,7 +154,6 @@ async function toggleLivreALire(id, aLire) {
   }
 }
 
-// ===== OUVRIR MODALE =====
 function ouvrirModale(livre) {
   livreModaleActuel = livre;
 
@@ -189,7 +176,6 @@ function ouvrirModale(livre) {
   document.body.style.overflow = "hidden";
 }
 
-// ===== METTRE À JOUR BOUTON MODALE =====
 function mettreAJourBoutonModale() {
   if (livreModaleActuel.aLire) {
     btnModaleAlire.innerHTML = "♥ Retirer de ma liste";
@@ -200,14 +186,12 @@ function mettreAJourBoutonModale() {
   }
 }
 
-// ===== FERMER MODALE =====
 function fermerModale() {
   modaleOverlay.classList.remove("show");
   document.body.style.overflow = "";
   livreModaleActuel = null;
 }
 
-// ===== FILTRER LES LIVRES =====
 function filtrerLivres() {
   livresFiltres = tousLesLivres.filter((livre) => {
     const matchGenre = genreActif === "Tous" || livre.genre === genreActif;
@@ -222,7 +206,6 @@ function filtrerLivres() {
   afficherLivres();
 }
 
-// ===== SETUP EVENT LISTENERS =====
 function setupEventListeners() {
   // Toggle dropdown filtres
   btnFiltrer.addEventListener("click", (e) => {
@@ -230,14 +213,12 @@ function setupEventListeners() {
     filtresDropdown.classList.toggle("show");
   });
 
-  // Fermer dropdown quand on clique ailleurs
   document.addEventListener("click", (e) => {
     if (!filtresDropdown.contains(e.target) && e.target !== btnFiltrer) {
       filtresDropdown.classList.remove("show");
     }
   });
 
-  // Sélection d'un filtre
   filtreOptions.forEach((btn) => {
     btn.addEventListener("click", () => {
       filtreOptions.forEach((b) => b.classList.remove("active"));
@@ -248,26 +229,22 @@ function setupEventListeners() {
     });
   });
 
-  // Recherche en temps réel
   searchBar.addEventListener("input", (e) => {
     rechercheTexte = e.target.value;
     filtrerLivres();
   });
 
-  // Fermer modale
   modaleClose.addEventListener("click", fermerModale);
   modaleOverlay.addEventListener("click", (e) => {
     if (e.target === modaleOverlay) fermerModale();
   });
 
-  // Bouton modale ajouter/retirer
   btnModaleAlire.addEventListener("click", async () => {
     if (livreModaleActuel) {
       await toggleLivreALire(livreModaleActuel.id, !livreModaleActuel.aLire);
     }
   });
 
-  // Fermer modale avec Escape
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && modaleOverlay.classList.contains("show")) {
       fermerModale();
