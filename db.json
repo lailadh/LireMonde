@@ -5,8 +5,8 @@
       "auteur": "Antoine de Saint-Exupéry",
       "genre": "Classique",
       "description": "Un jeune prince voyage de planète en planète et découvre les mystères de l'amitié, de l'amour et de la vie.",
-      "couverture": "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=300&h=450&fit=crop",
-      "aLire": false,
+      "couverture": "https://covers.openlibrary.org/b/id/8225261-L.jpg",
+      "aLire": true,
       "id": "1"
     },
     {
@@ -15,7 +15,7 @@
       "auteur": "George Orwell",
       "genre": "Science-fiction",
       "description": "Dans un monde totalitaire où Big Brother surveille tout, Winston Smith tente de résister à l'oppression.",
-      "couverture": "https://images.unsplash.com/photo-1532012197267-da84d127e765?w=300&h=450&fit=crop",
+      "couverture": "https://covers.openlibrary.org/b/id/153541-L.jpg",
       "aLire": false
     },
     {
@@ -24,7 +24,7 @@
       "auteur": "William Shakespeare",
       "genre": "Drame",
       "description": "Le prince Hamlet cherche à venger la mort de son père, assassiné par son propre frère qui a usurpé le trône.",
-      "couverture": "https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=300&h=450&fit=crop",
+      "couverture": "https://covers.openlibrary.org/b/id/8231856-L.jpg",
       "aLire": false
     },
     {
@@ -33,7 +33,7 @@
       "auteur": "J.K. Rowling",
       "genre": "Fantasy",
       "description": "Harry Potter découvre qu'il est un sorcier et entre à Poudlard, l'école de magie, où il commence une aventure extraordinaire.",
-      "couverture": "https://images.unsplash.com/photo-1618666012174-83b441c0bc76?w=300&h=450&fit=crop",
+      "couverture": "https://covers.openlibrary.org/b/id/7984916-L.jpg",
       "aLire": true
     },
     {
@@ -42,8 +42,8 @@
       "auteur": "Victor Hugo",
       "genre": "Classique",
       "description": "L'histoire de Jean Valjean, un ancien forçat qui cherche la rédemption dans la France du XIXe siècle.",
-      "couverture": "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=300&h=450&fit=crop",
-      "aLire": false
+      "couverture": "https://covers.openlibrary.org/b/id/8775116-L.jpg",
+      "aLire": true
     },
     {
       "id": "6",
@@ -51,7 +51,7 @@
       "auteur": "Isaac Asimov",
       "genre": "Science-fiction",
       "description": "Le mathématicien Hari Seldon prédit la chute de l'Empire Galactique et crée la Fondation pour préserver le savoir humain.",
-      "couverture": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=300&h=450&fit=crop",
+      "couverture": "https://covers.openlibrary.org/b/id/9259251-L.jpg",
       "aLire": false
     },
     {
@@ -60,7 +60,7 @@
       "auteur": "J.R.R. Tolkien",
       "genre": "Fantasy",
       "description": "Frodon Sacquet doit détruire l'Anneau Unique dans les feux de la Montagne du Destin pour sauver la Terre du Milieu.",
-      "couverture": "https://images.unsplash.com/photo-1465101162946-4377e57745c3?w=300&h=450&fit=crop",
+      "couverture": "https://covers.openlibrary.org/b/id/8051016-L.jpg",
       "aLire": true
     }
   ],
